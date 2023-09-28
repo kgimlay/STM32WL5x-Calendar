@@ -1,0 +1,12 @@
+../Modules/Calendar/Src/calendar.c:39:16:calendar_init	16	static
+../Modules/Calendar/Src/calendar.c:72:16:calendar_resetEvents	8	static
+../Modules/Calendar/Src/calendar.c:97:16:calendar_startScheduler	8	static
+../Modules/Calendar/Src/calendar.c:134:16:calendar_pauseScheduler	8	static
+../Modules/Calendar/Src/calendar.c:166:16:calendar_setDateTime	32	static
+../Modules/Calendar/Src/calendar.c:199:16:calendar_getDateTime	32	static
+../Modules/Calendar/Src/calendar.c:224:16:calendar_addEvent	24	static
+../Modules/Calendar/Src/calendar.c:262:16:calendar_peekEvent	16	static
+../Modules/Calendar/Src/calendar.c:291:16:calendar_removeEvent	16	static
+../Modules/Calendar/Src/calendar.c:334:16:calendar_updateScheduler	8	static
+../Modules/Calendar/Src/calendar.c:374:6:calendar_AlarmA_ISR	8	static
+../Modules/Calendar/Src/calendar.c:389:6:_update	48	static
