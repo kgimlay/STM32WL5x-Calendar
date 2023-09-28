@@ -6,7 +6,7 @@ ___
 
 ## Conceptual Design
 
-The scheduler consists of two conceptual parts:  the RTC hardware peripheral used for time and date keeping and the software calendar of events scheduled.
+The Calendar Module consists of two conceptual parts:  the RTC hardware peripheral used for time and date keeping and the software calendar of events scheduled.
 
 The Calendar module consists of three conceptual parts: the RTC hardware peripheral used for keeping the time and date, the software calendar for storing a collection of events to execute, and the scheduler which ties the RTC and the software calendar together for execution of events.
 
@@ -20,7 +20,7 @@ ___
 
 ## Installation/Usage
 
-To use the Calendar module add the provided directory to your STM32CubeMX project and include calender.h.
+To use the Calendar module add the provided directory to your STM32CubeMX project and include calendar.h.
 
 ### STM32CubeMX Configuration
 
@@ -32,7 +32,6 @@ Before you can use the module the RTC must be enabled an configured.  The Calend
 4. Go into the NVIC settings and enable Alarm A interrupts.
 
 ![RTC Config 1](./Assets/Images/rtc_config_1.png)
-
 ![RTC Config 2](./Assets/Images/rtc_config_2.png)
 
 ### Adding to Your STM32CubeMX Project
@@ -47,7 +46,7 @@ Now you are ready to add the module code.  Create a new source folder and add th
 6. Within that window navigate to MCU GCC Compiler > Include Paths.
 7. Add a new Include Path.
 8. Enter "../Modules/Calendar/Inc".
-9. Click Okay and exit the window.
+9. Click Okay and then Apply and Close.
 10. Now include "calendar.h" in the file you want to use it within.
 
 ![Calendar Import 1](./Assets/Images/import_1.png)
@@ -101,9 +100,9 @@ A very simple usage example STM32CubeMX project is provided.  For a more interes
     {
         deactivate_led(BLUE_LED);
     }
-    
+
 It is also necessary to call the *calendar_AlarmA_ISR()* function within the *HAL_RTC_AlarmAEventCallback()* function.  This lets the calendar scheduler know that the alarm triggered and the next alarm can be set.
-    
+
     /*
      * Alarm A callback.
      */
@@ -121,9 +120,9 @@ Within the *main()* function, initialize the calendar module after the HAL has i
     // set the date and time
     DateTime now = {23, 9, 29, 17, 0, 0};
     calendar_setDateTime(now);
-    
+
 Then add a few events to the calendar.  Notice the callback function registrations for each event's start and end.
-    
+
     // create a few events five seconds apart from each other lasting two
     // seconds each
     CalendarEvent someEvents[3] = {
@@ -146,7 +145,7 @@ Then add a few events to the calendar.  Notice the callback function registratio
     // add them to the calendar
     for (int i = 0; i < 3; i++)
       calendar_addEvent(someEvents[i]);
-    
+
 And finally start the calendar running.
 
     calendar_startScheduler();
