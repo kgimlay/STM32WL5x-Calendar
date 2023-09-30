@@ -36,11 +36,11 @@ Before you can use the module the RTC must be enabled an configured.  The Calend
 
 ### Adding to Your STM32CubeMX Project
 
-Now you are ready to add the module code.  Create a new source folder and add the module's header files to the compiler's include directory.
+Now you are ready to add the [module code](Modules).  Create a new source folder and add the module's header files to the compiler's include directory.
 
 1. Right click on the sub-project for the core you want to use the module in.
 2. Navigate to New > Source Folder.
-3. Name the new Source Folder Modules.  Copy the Calendar folder into here.
+3. Name the new Source Folder Modules.  Copy the [Calendar folder](Modules) into here.
 4. Right click again on the same sub-project.  Navigate to Properties.
 5. On the left side, navigate to C/C++ Build > Settings.
 6. Within that window navigate to MCU GCC Compiler > Include Paths.
