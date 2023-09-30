@@ -1,6 +1,0 @@
-../Modules/Calendar/Src/rtc_calendar_control.c:29:16:rtcCalendarControl_init	16	static
-../Modules/Calendar/Src/rtc_calendar_control.c:52:16:rtcCalendarControl_setDateTime	56	static
-../Modules/Calendar/Src/rtc_calendar_control.c:98:16:rtcCalendarControl_getDateTime	56	static
-../Modules/Calendar/Src/rtc_calendar_control.c:137:16:rtcCalendarControl_setAlarm_A	72	static
-../Modules/Calendar/Src/rtc_calendar_control.c:180:16:rtcCalendarControl_getAlarm_A	80	static
-../Modules/Calendar/Src/rtc_calendar_control.c:215:16:rtcCalendarControl_diableAlarm_A	8	static

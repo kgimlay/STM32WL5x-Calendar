@@ -234,7 +234,7 @@ CalendarStatus calendar_updateScheduler(void);
  *	began or ended.
  *
  * Note:
- * 	Call only within the RTC Alarm A ISR.  Otherwise the behavior is undefined.
+ * 	Call only within HAL_RTC_AlarmAEventCallback().  Otherwise the behavior is undefined.
  */
 void calendar_AlarmA_ISR(void);
 

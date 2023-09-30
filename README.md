@@ -57,29 +57,6 @@ Now you are ready to add the module code.  Create a new source folder and add th
 ![Calendar Import 6](./Assets/Images/import_6.png)
 ![Calendar Import 7](./Assets/Images/import_7.png)
 
-There appears to be a problem with the hardware and the STM32CubeMX auto-generated code on the Nucleo STM32WL55JC2 where the RTC's alarm can trigger once the NVIC is enables but before the HAL has been initialized for the RTC.  This causes the alarm interrupt flag to never be cleared and the IRQ is recalled indefinitely.  To fix this:
-
-1. Within the sub-project that the RTC is initialized within (the same one used above) in the file explorer open the file Core > Src > stm32wlxx_hal_msp.c.
-2. Find, copy, and comment out or remove the two lines within the *HAL_RTC_MspInit()* function:
-
-    ```
-    HAL_NVIC_SetPriority(RTC_LSECSS_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(RTC_LSECSS_IRQn);
-    ```
-
-3. Now open the file Core > Src > main.c and find the function *MX_RTC_Init()*.  At the bottom paste the two lines so that you have:
-
-    ```
-    /\* USER CODE BEGIN RTC_Init 2 \*/
-
-    HAL_NVIC_SetPriority(RTC_LSECSS_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(RTC_LSECSS_IRQn);
-
-    /\* USER CODE END RTC_Init 2 \*/
-    ```
-
-Any time that the STM32CubeMX auto-generates code (if you change configurations within the .ioc) step two will need to be repeated.
-
 ### Example Usage
 
 A very simple usage example STM32CubeMX project is provided.  For a more interesting experience I have included an additional module called LED Debug.  All it does is provide some basic functionality to turn on and off the LEDs on the STM32WL55JC development board.  The example turns on the blue LED when an event starts, and turns it off when the event ends.  This can be seen in the following callback functions.
@@ -161,6 +138,11 @@ Don't forget to update the calendar's scheduler in the main loop!
 ___
 
 ## Notable Design Choices and Limitations
+
+### Cascading Interrupts
+
+todo: add interrupt cascading issue
+
 
 ### Calendar Scheduler Updates (Entering and Exiting Events)
 

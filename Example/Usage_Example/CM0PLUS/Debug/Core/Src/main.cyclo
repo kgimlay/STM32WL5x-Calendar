@@ -1,6 +1,0 @@
-main.c:70:5:main	2
-main.c:146:13:MX_RTC_Init	5
-main.c:231:6:startEventCallback	1
-main.c:240:6:endEventCallback	1
-main.c:249:6:HAL_RTC_AlarmAEventCallback	1
-main.c:261:6:Error_Handler	1

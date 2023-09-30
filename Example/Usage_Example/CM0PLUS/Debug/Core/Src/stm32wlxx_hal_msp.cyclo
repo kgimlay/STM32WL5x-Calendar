@@ -1,7 +1,0 @@
-stm32wlxx_ll_rcc.h:2331:22:LL_RCC_EnableRTC	1
-stm32wlxx_ll_rcc.h:2341:22:LL_RCC_DisableRTC	1
-stm32wlxx_ll_bus.h:2014:22:LL_C2_APB1_GRP1_EnableClock	1
-stm32wlxx_ll_bus.h:2108:22:LL_C2_APB1_GRP1_DisableClock	1
-stm32wlxx_hal_msp.c:63:6:HAL_MspInit	1
-stm32wlxx_hal_msp.c:82:6:HAL_RTC_MspInit	3
-stm32wlxx_hal_msp.c:120:6:HAL_RTC_MspDeInit	2
