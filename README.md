@@ -59,7 +59,7 @@ Now you are ready to add the [module code](Modules).  Create a new source folder
 
 ### Example Usage
 
-A very simple usage example STM32CubeMX project is provided.  For a more interesting experience I have included an additional module called LED Debug.  All it does is provide some basic functionality to turn on and off the LEDs on the STM32WL55JC development board.  The example turns on the blue LED when an event starts, and turns it off when the event ends.  This can be seen in the following callback functions.
+A very simple usage [example STM32CubeMX project](Example) is provided.  For a more interesting experience I have included an additional module called LED Debug.  All it does is provide some basic functionality to turn on and off the LEDs on the STM32WL55JC development board.  The example turns on the blue LED when an event starts, and turns it off when the event ends.  This can be seen in the following callback functions.
 
     /*
      * Function to execute once an event is entered.
